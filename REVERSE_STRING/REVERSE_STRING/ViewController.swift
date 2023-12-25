@@ -11,13 +11,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var reversStr = "12345"
-        var reversedStr = ""
-        for char in reversStr{
-        reversedStr =  String(char) + reversedStr
-        }
-        print(reversedStr)
-      //  output = 54321
+        let str = "Anuu Anuu Anu An A"
+              let words = str.components(separatedBy: .whitespacesAndNewlines)
+
+              var wordCount = [String: Int]()
+              for word in words {
+                  if let count = wordCount[word] {
+                      wordCount[word] = count + 1
+                  } else {
+                      wordCount[word] = 1
+                  }
+              }
+
+              print(wordCount)
+        
+   //   Output   =  ["Anuu": 2, "An": 1, "Anu": 1, "A": 1]
     }
 }
 
