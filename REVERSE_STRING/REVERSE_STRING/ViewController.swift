@@ -8,16 +8,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var reversStr = "12345"
-        var reversedStr = ""
-        for char in reversStr{
-        reversedStr =  String(char) + reversedStr
+        let numArray = [1,1,2,2,3,3,4,5,5]
+        var uniqueArray = [Int]()
+        let grouped = Dictionary (grouping: numArray, by: { $0 })
+        for (key, value) in grouped {
+            if value.count == 1 {
+                uniqueArray.append (key)
+            }
         }
-        print(reversedStr)
-      //  output = 54321
+        print (uniqueArray .sorted()) 
+        // output = [4]
     }
 }
 
