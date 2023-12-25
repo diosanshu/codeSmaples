@@ -13,19 +13,20 @@ class ViewController: UIViewController {
         
         
         super.viewDidLoad()
-        let orginalArray = [1,2,3,4,5,6,7,8,9]
-        var firstValue = 0
-        var lastvalue = orginalArray.count - 1
-        for _ in orginalArray{
-            let sumValues = orginalArray[firstValue] + orginalArray[lastvalue]
-            if sumValues == 10 {
-                print(orginalArray[firstValue] , orginalArray[lastvalue])
-                firstValue += 1
-                lastvalue -= 1
+        func findinterval(count: Int) {
+                let duplicate = [2,4,5,5,8,1,9]
+
+                for i in  0..<duplicate.count {
+                    for j in (i+1)..<duplicate.count {
+                        
+                        if duplicate[i] + duplicate[j] == count {
+                            print("[\(duplicate[i]), \(duplicate[j])]")
+                        }
+                        
+                    }
+                }
             }
-            
-        }
-        
+        findinterval(count: 1)
 //    output:
 //        1 9
 //        2 8
@@ -39,5 +40,27 @@ class ViewController: UIViewController {
         
         
     }
+    
+    // 2nd way
+    func findinterval(count: Int) {
+            let duplicate = [2,4,5,5,8,1,9]
+
+            for i in  0..<duplicate.count {
+                for j in (i+1)..<duplicate.count {
+                    
+                    if duplicate[i] + duplicate[j] == count {
+                        print("[\(duplicate[i]), \(duplicate[j])]")
+                    }
+                    
+                }
+            }
+        }
+    
+    
+    //    output:
+
+//    [2, 8]
+//    [5, 5]
+//    [1, 9]
 }
 
