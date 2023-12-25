@@ -11,13 +11,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var reversStr = "12345"
-        var reversedStr = ""
-        for char in reversStr{
-        reversedStr =  String(char) + reversedStr
-        }
-        print(reversedStr)
-      //  output = 54321
+        let reversArray = [1,2,3]
+           var reversedArray = [Int]()
+             for i in reversArray {
+               reversedArray.insert(i, at: 0)
+             }
+           print(reversedArray)
+        // output = [3,2,1]
     }
 }
 
