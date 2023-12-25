@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var reversStr = "12345"
+        let reversStr = "12345"
         var reversedStr = ""
         for char in reversStr{
         reversedStr =  String(char) + reversedStr
