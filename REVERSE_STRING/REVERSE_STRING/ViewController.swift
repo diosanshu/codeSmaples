@@ -11,35 +11,31 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let numbers = [3, 1,2]
-        if let secondMax = findSecondMax(numbers) {
-            print("The second maximum number is: \(secondMax)")
-        } else {
-            print("Array does not have enough elements.")
-        }
+      
+        let input = "aabbabbaabbbbaaaabab"
+               let output = transformString(input)
+               print(output)
+    
+      //  output : abababababababababab
         
-      //  output : The second maximum number is: 2
 
     }
-    func findSecondMax(_ array: [Int]) -> Int? {
-        guard array.count >= 2 else {
-            return nil // Array should have at least two elements
-        }
-
-        var max1 = Int.min
-        var max2 = Int.min
-
-        for num in array {
-            if num > max1 {
-                max2 = max1
-                max1 = num
-            } else if num > max2 && num < max1 {
-                max2 = num
+    func transformString(_ input: String) -> String {
+            var output = ""
+            
+            var aCount = 0
+            var bCount = 0
+            
+            for char in input {
+                if char == "a" {
+                    aCount += 1 }
+                else if char == "b" {
+                    bCount += 1 }
             }
+            let val = min(aCount, bCount)
+             print("count = ",val)
+            return String(repeating: "ab", count: val)
         }
-
-        return max2
-    }
 
 }
 
