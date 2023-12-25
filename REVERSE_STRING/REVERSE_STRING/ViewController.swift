@@ -8,16 +8,33 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var reversStr = "12345"
-        var reversedStr = ""
-        for char in reversStr{
-        reversedStr =  String(char) + reversedStr
+                for i in 1..<5 {
+                          for _ in 1...i {
+                              print("*", terminator: "")
+                          }
+                          print("")
+                      }
+              //  output = *
+                       //  **
+                      //   ***
+                      //   ****
+            }
+    
+    func secondWay(){
+        for i in 1..<5 { // or for i in stride(from: 1, to: 5, by: 1) {
+            for j in 1...i { // for j in stride(from: 1, through: i, by: 1) {
+                print(j, terminator: "")
+            }
+            print("")
         }
-        print(reversedStr)
-      //  output = 54321
+    //    output
+    //    1
+    //    12
+    //    123
+    //    1234
+
     }
 }
-
