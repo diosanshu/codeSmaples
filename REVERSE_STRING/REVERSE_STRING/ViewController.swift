@@ -11,13 +11,26 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var reversStr = "12345"
-        var reversedStr = ""
-        for char in reversStr{
-        reversedStr =  String(char) + reversedStr
+        var array:[Any] = [1,2,[3,4],[5,6,[7]],8]
+                flattenedArray(array: array)
+                print(flattenedArray(array: array))
+      //  output = [1, 2, 3, 4, 5, 6, 7, 8]
+    }
+    func flattenedArray(array:[Any]) -> [Int] {
+        var myArray = [Int]()
+        for element in array {
+            if let element = element as? Int {
+                myArray.append(element)
+            }
+            if let element = element as? [Any] {
+                let result = flattenedArray(array: element)
+                for i in result {
+                    myArray.append(i)
+                }
+
+            }
         }
-        print(reversedStr)
-      //  output = 54321
+        return myArray
     }
 }
 
