@@ -11,30 +11,28 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(getvowels(string: "Hello World"))
-
-      //  output = (constants: "Hll Wrld", vowels: "eoo")
+        print(findVowelConsonant(mystr: "Hello World"))
+      //  Output(Vowels: 3, Consonant: 7)
+      
     }
-    func getvowels(string:String) -> (constants:String, vowels:String) {
-           var Constants:String = ""//Stores constants
-           var Vowels:String = ""//Stores Vowels
-           for letter in string {//Iterate over string
-               switch letter.lowercased() {
-               case "a":
-                   Vowels.append(contentsOf: "\(letter)")
-               case "e":
-                   Vowels.append(contentsOf: "\(letter)")
-               case "i":
-                   Vowels.append(contentsOf: "\(letter)")
-               case "o":
-                   Vowels.append(contentsOf: "\(letter)")
-               case "u":
-                   Vowels.append(contentsOf: "\(letter)")
-               default://If no vowels are found add remaining characters to constants string
-                   Constants.append(contentsOf: "\(letter)")
-               }
+    func findVowelConsonant(mystr: String) ->(Vowels: Int, Consonant: Int){
+           var countVowel = 0
+           var countConsonant = 0
+          
+           let myVowel = "aeious"
+           let myconsonant = "bcdfghijklmnpqrtvwxyz"
+
+           let myString = mystr.lowercased()
+
+           for i in myString{
+              if myVowel.contains(i){
+                 countVowel += 1
+              }
+              else if myconsonant.contains(i){
+                 countConsonant += 1
+              }
            }
-           return ("\(Constants)", "\(Vowels)")//Return tuple
-       }
+           return (countVowel, countConsonant)
+        }
 }
 
