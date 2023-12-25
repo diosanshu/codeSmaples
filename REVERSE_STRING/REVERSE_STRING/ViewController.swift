@@ -11,9 +11,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        var reversStr = "12345"
+        var reversedStr = ""
+        for char in reversStr{
+        reversedStr =  String(char) + reversedStr
+        }
+        print(reversedStr)
+      //  output = 54321
     }
-
-
 }
 
